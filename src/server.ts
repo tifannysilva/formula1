@@ -8,23 +8,23 @@ server.register(cors, {
 });
 
 const teams = [
-  { id: 1, name: "Hello Kitty Speed Club", world: "Rainbow Cherry Town" },
-  { id: 2, name: "Kuromi Chaos Racers", world: "Midnight Mischief City" },
-  { id: 3, name: "My Melody Dream Team", world: "Sweet Heart Meadow" },
-  { id: 4, name: "Badtz-Maru Drift Crew", world: "Neon Harbor District" },
-  { id: 5, name: "Cinnamoroll Sky Riders", world: "Cloudberry Kingdom" },
+  { id: 1, name: "Bob Esponja Burger Racers", world: "Fenda do Biquíni" },
+  { id: 2, name: "Patrick Star Drift Team", world: "Pedra do Patrick" },
+  { id: 3, name: "Lula Molusco Jazz Racers", world: "Rua das Conchas" },
+  { id: 4, name: "Sandy Turbo Squirrels", world: "Cúpula da Sandy" },
+  { id: 5, name: "Plankton Chaos Drivers", world: "Balde de Lixo" },
 ];
 
 const drivers = [
-  { id: 1, name: "Hello Kitty", team: "Hello Kitty Speed Club" },
-  { id: 2, name: "Kuromi", team: "Kuromi Chaos Racers" },
-  { id: 3, name: "My Melody", team: "My Melody Dream Team" },
-  { id: 4, name: "Badtz-Maru", team: "Badtz-Maru Drift Crew" },
-  { id: 5, name: "Cinnamoroll", team: "Cinnamoroll Sky Riders" },
+  { id: 1, name: "Bob Esponja", team: "Bob Esponja Burger Racers" },
+  { id: 2, name: "Patrick Estrela", team: "Patrick Star Drift Team" },
+  { id: 3, name: "Lula Molusco", team: "Lula Molusco Jazz Racers" },
+  { id: 4, name: "Sandy Bochechas", team: "Sandy Turbo Squirrels" },
+  { id: 5, name: "Plankton", team: "Plankton Chaos Drivers" },
 ];
 
 server.get("/", async () => {
-  return { message: "Sanrio Kart API running!" };
+  return { message: "Bikini Bottom Kart API running!" };
 });
 
 server.get("/teams", async (request, response) => {
@@ -49,7 +49,7 @@ server.get<{ Params: DriverParams }>(
 
     if (!driver) {
       response.type("application/json").code(404);
-      return { message: "Character Not Found" };
+      return { message: "Personagem não encontrado" };
     }
 
     response.type("application/json").code(200);
@@ -58,5 +58,6 @@ server.get<{ Params: DriverParams }>(
 );
 
 server.listen({ port: 3333 }, () => {
-  console.log("SANRIO SERVER INIT");
+  console.log("BIKINI BOTTOM SERVER INIT");
+});
 });
